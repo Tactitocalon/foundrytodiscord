@@ -1,5 +1,6 @@
 import { messageParserGeneric } from '../generic.mjs';
 import { ThreadedChatConfig } from '../../src/forms/threadedchatconfig.mjs'
+import { messageParserPF1 } from '../pf1.mjs';
 import { messageParserPF2e } from '../pf2e.mjs';
 import { messageParserDnD5e } from '../dnd5e.mjs';
 let SYSTEM_ID;
@@ -210,6 +211,10 @@ export function initParser() {
         case "dnd5e":
             console.log("foundrytodiscord | Game system detected as 'dnd5e'.");
             return messageParserDnD5e;
+            break;
+        case "pf1":
+            console.log("foundrytodiscord | Game system detected as 'pf1'.");
+            return messageParserPF1;
             break;
         default:
             console.log("foundrytodiscord | Game system not fully supported. Using 'generic' mode.");
